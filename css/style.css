@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #000000;
     margin: 0;
@@ -5,71 +9,66 @@ body {
 }
 
 header {
-    /* background-color: aliceblue; */
     color:#ABA2A2;
-    height: 50%;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 nav {
-    display: inline-block;
+    display: flex;
     width: 100%;
-    height: 15%;
-    min-width: 775px;
-    vertical-align: middle;
-    text-align: center;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    row-gap: 20px;
 }
 
-a.navigation-link {
+.navigation-link {
     text-decoration: none;
     color: #a4a0a0;
-    margin: 10px;
+    display: block;
+    margin-right: 20px;
 }
 
-a.navigation-link:hover {
+.navigation-link:hover {
     color:#ffffff;
 }
 
 .banner-content {
-    min-width: 245px;
-    width: 100%;
-    height: 84%;
-    text-align: center;
-    display: inline-block;
-    /* box-shadow: 4px 4px 94px 20px rgba(17, 151, 255, 0.2); */
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    flex-flow: row wrap;
 }
-
-.banner-item {
-    display: inline-block;
-    width: 32%;
-    height: 100%;
-    /* border-width: 1px;
-    border-color: #a4a0a0;
-    border-style: solid; 
-    transition: transform .3s */
-}
-
-/*
-.banner-item:hover {
-    transform: scale(1.1,1.1);
-} */
 
 .banner-video {
-    height: 100%;
-    max-width: 95%;
+    min-width: 457px;
+    height: auto;
+    margin-right: 10px;
+    display: block;
     aspect-ratio: 16 / 9;
     border-radius: 5% 5%;
     box-shadow: 4px 4px 94px 20px rgba(17, 151, 255, 0.2);
 }
 
-a.catalog-link {
+.category-navigation {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.catalog-link {
     color:#c1c1c1;
     text-decoration: none;
     background: #232323;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
-    display: inline-block;
+    display: block;
     padding: 15px;
     width: 100px;
     height: 15px;
@@ -77,65 +76,86 @@ a.catalog-link {
     margin: 10px;
 }
 
-a.catalog-link:hover {
+.catalog-link:hover {
     transition: 1.5s linear;
     color: #000000;
     background: #ffffff;
 }
 
-.category-navigation {
+.content {
+    margin: 0px 15%;
+}
+
+.category-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    row-gap: 25px;
+    column-gap: 25px;
     margin-top: 25px;
-    text-align: center;
 }
 
-div.category-content {
-    display: block;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 25px;
-    margin-bottom: 55px;
-    min-width: 1072px;
-}
-
-div.category-item {
-    width: 14%;
-    display: inline-block;
-    margin-right: 25px;
-    margin-bottom: 25px;
-}
-
-.category-item-image {
+.category-item {
     width: 160px;
     height: 227px;
     display: block;
     border-radius: 12%;
     box-shadow: 4px 4px 94px 20px rgba(17, 151, 255, 0.2);
-    transition: all 0.7s;
+    transition-property: transform;
+    transition-duration: 0.7s;
+    background-position: center;
+    background-size: cover;
 }
 
-.category-item-image:hover {
+.category-item:hover {
     opacity: 0.3;
-    cursor: grab;
+    cursor: pointer;
     transform: translate(0px,5px);
 }
 
 .category-header {
-    color:#ffffff;
-    text-align: left;
     font-size: 24pt;
-    margin-left: 10px;
+    margin-left: 25px;
+    width: 100%;
+    color:#ffffff;
 }
 
 footer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0px;
 }
 
-footer img{
+.footer-action {
+    display: block;
+    background-size: cover;
+    background-position: center;
     width: 50px;
-    margin: 15px;
+    height: 50px;
+    margin-right: 15px;
     transition: transform 1s;
 }
 
-footer img:hover{
+.footer-action:hover{
     transform: rotate(1turn);
+}
+
+@media(max-width: 500px) {
+    .category-header {
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .banner-video {
+        min-width: 0px;
+        margin-right: 0px;
+    }
+
+    .navigation-link {
+        width: 100%;
+        text-align: center;
+    }
 }
