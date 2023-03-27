@@ -11,12 +11,25 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="navigation-block">
             <a class="navigation-link" href="#">Главная</a>
             <a class="navigation-link" href="#">Каталог</a>
             <a class="navigation-link" href="#">Личный кабинет</a>
             <a class="navigation-link" href="#">Подписки</a>
             <a class="navigation-link" href="#">Магазин</a>
+        </nav>
+        <nav class="overlay-menu">
+            <div class="overlay-menu-actions">
+                <span class="overlay-menu-open-action" onclick="showOverlayMenu()">&#9776;</span>
+                <span class="overlay-menu-close-action" onclick="hideOverlayMenu()">&#65794;</span>
+            </div>
+            <div class="overlay-menu-content">
+                <a class="overlay-menu-content-item" href="#" onclick="hideOverlayMenu()">Главная</a>
+                <a class="overlay-menu-content-item" href="#" onclick="hideOverlayMenu()">Каталог</a>
+                <a class="overlay-menu-content-item" href="#" onclick="hideOverlayMenu()">Личный кабинет</a>
+                <a class="overlay-menu-content-item" href="#" onclick="hideOverlayMenu()">Подписки</a>
+                <a class="overlay-menu-content-item" href="#" onclick="hideOverlayMenu()">Магазин</a>
+            </div>
         </nav>
     </header>
     <main>
@@ -216,6 +229,20 @@
         <a class="footer-action" href="#" style="background-image: url('img/vkontakte.png');"></a>
         <a class="footer-action" href="#" style="background-image: url('img/telegram.png');"></a>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        function hideOverlayMenu() {
+            $('.overlay-menu-close-action').css('display', 'none');
+            $('.overlay-menu-open-action').css('display', 'block');
+            $('.overlay-menu-content').css('display', 'none');
+        }
+
+        function showOverlayMenu() {
+            $('.overlay-menu-close-action').css('display', 'block');
+            $('.overlay-menu-open-action').css('display', 'none');
+            $('.overlay-menu-content').css('display', 'flex');
+        }
+    </script>
 </body>
 
 </html>
